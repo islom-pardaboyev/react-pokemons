@@ -6,24 +6,25 @@ function Pokemons() {
   const { pokemons } = useContext(Context);
 
   return (
-    <section className="h-screen w-full flex items-start p-[30px] gap-5 pb-10 flex-wrap justify-start overflow-y-auto">
-      {pokemons.map((pokemon, index) => (
-        <PokemonCard
-          key={index}
-          id={pokemon.id}
-          img={pokemon.img}
-          egg={pokemon.egg}
-          height={pokemon.height}
-          name={pokemon.name}
-          types={pokemon.type}
-          width={pokemon.weight}
-          isLiked={pokemon.isLiked}
-          isSaved={pokemon.isSaved}
-        />
-      ))}
+    <section className="h-screen w-full p-[30px] pb-10 overflow-y-auto">
+      <div className="flex flex-wrap  items-start justify-start gap-5">
+        {pokemons.map((pokemon, index) => (
+          <PokemonCard
+            key={index}
+            id={pokemon.id}
+            img={pokemon.img}
+            egg={pokemon.egg}
+            height={pokemon.height}
+            name={pokemon.name}
+            types={pokemon.type}
+            width={pokemon.weight}
+            isLiked={pokemon.isLiked}
+            isSaved={pokemon.isSaved}
+          />
+        ))}
+      </div>
     </section>
   );
 }
 
 export default Pokemons;
-
