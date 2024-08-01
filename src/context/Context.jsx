@@ -3,7 +3,7 @@ import React, { createContext, useState } from "react";
 const Context = createContext();
 
 function ContextPokemons({ children }) {
-  const [pokemons, setPokemons] = useState([
+  const [pokemons, setPokemons] = useState(JSON.parse(window.localStorage.getItem('poks')) || [
     {
       id: 1,
       num: "001",
@@ -3478,12 +3478,31 @@ function ContextPokemons({ children }) {
       multipliers: null,
       weaknesses: ["Bug", "Ghost", "Dark"],
     },
-  ]);
+  ])
+
+  function likedFn(id) {
+    const findedPokemon = pokemons.find((pokemon) => pokemon.id == id);
+    findedPokemon.isLiked = !findedPokemon.isLiked;
+    setPokemons([...pokemons]);
+    window.localStorage.setItem('poks', JSON.stringify(pokemons))
+  }
+
+  function savedFn(id) {
+    const findedPokemon = pokemons.find((pokemon) => pokemon.id == id);
+    findedPokemon.isSaved = !findedPokemon.isSaved;
+    setPokemons([...pokemons]);
+    window.localStorage.setItem('poks', JSON.stringify(pokemons))
+  }
+
+  window.localStorage.setItem('poks', JSON.stringify(pokemons))
 
   return (
-    <Context.Provider value={{ pokemons, setPokemons }}>
-      {children}
-    </Context.Provider>
+    <>
+      
+      <Context.Provider value={{ pokemons, setPokemons, likedFn, savedFn }}>
+        {children}
+      </Context.Provider>
+    </>
   );
 }
 

@@ -8,7 +8,7 @@ function Navbar() {
   const { pokemons, setPokemons } = useContext(Context);
   return (
     <nav className="min-w-[20%] relative max-w-full h-screen overflow-y-auto bg-gradient-to-r from-violet-600 to-indigo-600">
-      <Link to={"/"}>
+      <Link to={"/"}>r
         <img className="mx-auto" src={Logo} width={150} alt="" />
       </Link>
 
@@ -49,7 +49,7 @@ function Navbar() {
 
         <div className="absolute bottom-0 w-full">
           <a
-            href="https://t.me/IslomPardaboyev"
+            href="https://taplink.cc/islompardaboyev"
             className={
               "p-3 flex hover:bg-white/20 duration-300 hover:pl-10 items-center gap-4 border-y border-white/20"
             }
@@ -59,7 +59,7 @@ function Navbar() {
             Hire Me
           </a>
           <a
-            href="https://t.me/IslomPardaboyev"
+            href="https://github.com/islom-pardaboyev"
             className={
               "p-3 flex hover:bg-white/20 duration-300 hover:pl-10 items-center gap-4 border-y border-white/20"
             }

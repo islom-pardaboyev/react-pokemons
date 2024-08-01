@@ -3,10 +3,10 @@ import { Context } from "../../context/Context";
 import PokemonCard from "../../components/PokemonCard";
 
 function Pokemons() {
-  const { pokemons, setPokemons } = useContext(Context);
+  const { pokemons } = useContext(Context);
 
   return (
-    <section className="h-screen flex items-start gap-5 pb-10 flex-wrap justify-between overflow-y-auto">
+    <section className="h-screen w-full flex items-start p-[30px] gap-5 pb-10 flex-wrap justify-start overflow-y-auto">
       {pokemons.map((pokemon, index) => (
         <PokemonCard
           key={index}
@@ -17,6 +17,8 @@ function Pokemons() {
           name={pokemon.name}
           types={pokemon.type}
           width={pokemon.weight}
+          isLiked={pokemon.isLiked}
+          isSaved={pokemon.isSaved}
         />
       ))}
     </section>

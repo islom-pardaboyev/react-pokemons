@@ -10,4 +10,5 @@
 
 nav div a.active{
     @apply bg-white/20 border-l-4 rounded-l-lg border-white duration-300 pl-10
+    
 }
